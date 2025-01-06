@@ -1,0 +1,19 @@
+{# src/Frontend/Templates/Pages/Home/index.html.twig #}
+{% extends 'layouts/layout.html.twig' %}
+
+{% block head %}
+    {# Ici tu peux charger du CSS/JS spécifique à la page d'accueil #}
+    {# <link rel="stylesheet" href="/css/home.css"> #}
+{% endblock %}
+
+{% block content %}
+    <h1>Bienvenue sur Spin&Win</h1>
+    <p>Ici, vous découvrirez nos jeux, promotions et bien plus encore.</p>
+
+    {# Lien vers d'autres sections si nécessaire #}
+    <ul>
+        <li><a href="/games">Voir les jeux</a></li>
+        <li><a href="/promotions">Découvrir les promotions</a></li>
+        <li><a href="/contact">Nous contacter</a></li>
+    </ul>
+{% endblock %}

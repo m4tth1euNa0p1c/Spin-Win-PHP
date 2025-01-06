@@ -1,0 +1,19 @@
+{# src/Frontend/Templates/Pages/Contact/index.html.twig #}
+{% extends 'layouts/layout.html.twig' %}
+
+{% block head %}
+    {# CSS/JS pour la page de contact #}
+{% endblock %}
+
+{% block content %}
+    <h1>Contact</h1>
+    <p>N’hésitez pas à nous écrire :</p>
+    <form action="/contact" method="POST">
+        <!-- Champs du formulaire, etc. -->
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email">
+        <label for="message">Message :</label>
+        <textarea id="message" name="message"></textarea>
+        <button type="submit">Envoyer</button>
+    </form>
+{% endblock %}
