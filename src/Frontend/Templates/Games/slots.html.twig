@@ -1,0 +1,91 @@
+{% extends 'layouts/layout.html.twig' %}
+
+{% block title %}Machine à Sous{% endblock %}
+
+{% block head %}
+    <meta name="csrf-token" content="{{ csrf_token }}">
+{% endblock %}
+
+{% block content %}
+<div class="slots-container">
+    <h1>Slot Slut 3 <strong>Prix = 1 coins</strong> </h1>
+    <div class="slot-machine">
+        <div class="reels">
+            <div class="reel" id="reel1">
+                <div class="reel-container">
+                    <img src="/images/empty.png" alt="empty">
+                </div>
+            </div>
+            <div class="reel" id="reel2">
+                <div class="reel-container">
+                    <img src="/images/empty.png" alt="empty">
+                </div>
+            </div>
+            <div class="reel" id="reel3">
+                <div class="reel-container">
+                    <img src="/images/empty.png" alt="empty">
+                </div>
+            </div>
+        </div>
+        <div class="slot-info">
+            <p><i class="fas fa-coins"></i> Crédits : <span id="current-coins">{{ coins }}</span> EFREICOIN</p>
+        </div>
+        <button id="spin-button"><i class="fas fa-play"></i> Lancer</button>
+        <div id="result-message"></div>
+    </div>
+
+    <div class="instructions">
+        <h2><i class="fas fa-info-circle"></i> Comment Jouer</h2>
+        <div class="instruction-steps">
+            <div class="step">
+                <i class="fas fa-hand-pointer fa-2x"></i>
+                <p>Cliquez sur <strong>Lancer</strong> pour faire tourner les rouleaux.</p>
+            </div>
+            <div class="step">
+                <i class="fas fa-sync fa-2x"></i>
+                <p>Les rouleaux s'arrêtent aléatoirement pour afficher des symboles.</p>
+            </div>
+            <div class="step">
+                <i class="fas fa-coins fa-2x"></i>
+                <p>Des combinaisons de symboles gagnantes vous rapportent des EFREICOINS.</p>
+            </div>
+            <div class="step">
+                <i class="fas fa-trophy fa-2x"></i>
+                <p>Atteignez le jackpot pour des gains exceptionnels !</p>
+            </div>
+        </div>
+        <h3><i class="fas fa-chart-line"></i> Gains Potentiels</h3>
+        <div class="potential-gains">
+            <div class="gain-item">
+                <img src="/images/raisin.png" alt="Cerise">
+                <p><strong>3 Raisins :</strong> 20 EFREICOINS</p>
+            </div>
+            <div class="gain-item">
+                <img src="/images/lemon.png" alt="Citron">
+                <p><strong>3 Citrons :</strong> 30 EFREICOINS</p>
+            </div>
+            <div class="gain-item">
+                <img src="/images/orange.png" alt="Orange">
+                <p><strong>3 Oranges :</strong> 50 EFREICOINS</p>
+            </div>
+            <div class="gain-item">
+                <img src="/images/prune.png" alt="Cloche">
+                <p><strong>3 Prunes :</strong> 100 EFREICOINS</p>
+            </div>
+            <div class="gain-item">
+                <img src="/images/jackpot.png" alt="Jackpot">
+                <p><strong>Jackpot :</strong> 500 EFREICOINS</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/slots.css">
+{% endblock %}
+
+{% block scripts %}
+    <!-- Inclure le script spécifique à la machine à sous -->
+    <script src="/js/slots.js"></script>
+{% endblock %}

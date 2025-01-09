@@ -1,0 +1,47 @@
+{# src/Frontend/Templates/Errors/500.html.twig #}
+{% extends 'layouts/layout.html.twig' %}
+
+{% block title %}Erreur 500 - Erreur Interne du Serveur{% endblock %}
+
+{% block content %}
+    <div class="error-container">
+        <h1>Erreur 500</h1>
+        <p>Désolé, une erreur interne du serveur s'est produite. Veuillez réessayer plus tard.</p>
+        <a href="{{ path('home') }}" class="home-link">Retour à l'accueil</a>
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        .error-container {
+            text-align: center;
+            padding: 50px;
+        }
+
+        .error-container h1 {
+            font-size: 48px;
+            color: #dc3545;
+            margin-bottom: 20px;
+        }
+
+        .error-container p {
+            font-size: 18px;
+            color: #6c757d;
+            margin-bottom: 30px;
+        }
+
+        .home-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3d12ff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .home-link:hover {
+            background-color: #2500cc;
+        }
+    </style>
+{% endblock %}

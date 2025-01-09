@@ -1,0 +1,101 @@
+/* 
+  Ajout d'un sélecteur pour définir l'arrière-plan en pleine page.
+  Vous pouvez utiliser "body.promotions-page" ou simplement ".promotions-page"
+  selon votre structure HTML/Twig.
+*/
+
+.promotions-page {
+    /* Occupe toute la hauteur de la fenêtre */
+    min-height: 100vh; 
+    /* Image de fond centrée, recadrée, et fixe au scroll */
+    background: url("/images/image.png") no-repeat center center fixed;
+    background-size: cover;
+    /* Optionnel : si vous souhaitez un peu de padding autour du conteneur */
+    padding: 40px 0;
+    /* Si votre texte doit être blanc par défaut */
+    color: #fff; 
+}
+
+/* Conteneur principal des promotions */
+.promotions-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.85); /* Transparence pour laisser entrevoir le BG */
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Header des promotions */
+.promotions-header {
+    margin-bottom: 30px;
+}
+
+/* Titre principal avec animation (défini dans promotions.js) */
+.animated-text {
+    font-size: 40px;
+    color: #ff5722;
+    font-weight: bold;
+    /* On applique une classe d’animation dans promotions.js */
+}
+
+/* Sous-titre */
+.subtitle {
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Liste des promotions */
+.promotions-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: left;
+}
+
+.promotions-list li {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    color: #444;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s;
+}
+
+.promotions-list li:hover {
+    transform: translateY(-5px);
+}
+
+/* Icônes FontAwesome à l’intérieur des listes */
+.promotions-list li i {
+    color: #ffe600;
+    font-size: 24px;
+}
+
+/* Mobile friendly */
+@media (max-width: 600px) {
+    .promotions-page {
+        /* Moins de padding en mobile */
+        padding: 20px 0;
+    }
+    
+    .promotions-container {
+        padding: 20px 10px;
+    }
+    
+    .animated-text {
+        font-size: 32px;
+    }
+    
+    .promotions-list li {
+        font-size: 16px;
+    }
+}

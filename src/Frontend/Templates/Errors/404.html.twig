@@ -1,0 +1,17 @@
+{% extends 'layouts/layout.html.twig' %}
+
+{% block title %}Page Non Trouvée{% endblock %}
+
+{% block content %}
+    <div class="error-container">
+        <div class="error-box">
+            <i class="fas fa-exclamation-triangle error-icon"></i>
+            <h1>404</h1>
+            <h2>Page Non Trouvée</h2>
+            <p>Désolé, la page que vous recherchez n'existe pas.</p>
+            <a href="{{ path('home') }}" class="back-home-btn">
+                <i class="fas fa-home"></i> Retour à l'Accueil
+            </a>
+        </div>
+    </div>
+{% endblock %}

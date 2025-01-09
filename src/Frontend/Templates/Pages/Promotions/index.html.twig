@@ -1,16 +1,22 @@
-{# src/Frontend/Templates/Pages/Promotions/index.html.twig #}
 {% extends 'layouts/layout.html.twig' %}
 
 {% block head %}
-    {# CSS/JS pour les promotions #}
+    <link rel="stylesheet" href="/css/promotions.css">
 {% endblock %}
 
 {% block content %}
-    <h1>Promotions</h1>
-    <p>Profitez de nos offres spéciales :</p>
-    <ul>
-        <li><strong>Bonus de Bienvenue :</strong> 100% jusqu’à 200€</li>
-        <li><strong>Happy Hour :</strong> Chaque vendredi de 18h à 20h</li>
-        {# etc. #}
-    </ul>
+<div class="promotions-page">
+    <div class="promotions-container">
+        <div class="promotions-header">
+            <h1 class="animated-text">-Promotions-</h1>
+            <p class="subtitle">Les meilleures offres du moment !</p>
+        </div>
+
+        <ul class="promotions-list">
+            <li><i class="fas fa-gift"></i> Bonus de Bienvenue : 100% jusqu’à 200€</li>
+            <li><i class="fas fa-clock"></i> Happy Hour : Chaque vendredi de 18h à 20h</li>
+            <!-- etc. -->
+        </ul>
+    </div>
+</div>
 {% endblock %}

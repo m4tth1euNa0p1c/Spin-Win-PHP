@@ -1,74 +1,71 @@
 <?php
 namespace App\Core;
 
+use Twig\Environment;
+use PDO;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Error\SyntaxError;
+
 class Route
 {
     private $method;
     private $uri;
     private $action;
     private $name;
-    private $paramsPattern; // Optionnel si tu veux supporter des paramètres dynamiques
+    private $paramsPattern;
 
     public function __construct($method, $uri, $action)
     {
-        $this->method = $method;
-        // Supprime le slash final
+        $this->method = strtoupper($method);
         $this->uri = rtrim($uri, '/');
         $this->action = $action;
 
-        // Si tu veux supporter des paramètres dynamiques (ex: /games/{slug})
-        // tu peux transformer {slug} en (?P<slug>[^/]+), etc.
-        // $this->paramsPattern = $this->convertUriToRegex($this->uri);
     }
 
-    /**
-     * Nommer la route (facultatif)
-     */
     public function setName($name)
     {
         $this->name = $name;
         return $this;
     }
 
-    /**
-     * Vérifie si la route correspond à l'URI demandée et la méthode HTTP
-     */
     public function matches($requestUri, $requestMethod)
     {
         // Si la méthode ne correspond pas, c'est terminé
-        if ($this->method !== $requestMethod) {
+        if ($this->method !== strtoupper($requestMethod)) {
             return false;
         }
 
-        // Compare l'URI : exact match
-        // (Dans une version plus avancée, tu pourrais gérer un match regex ou paramétrique)
         return ($this->uri === $requestUri);
     }
 
-    /**
-     * Exécute l'action (contrôleur@methode) de la route
-     */
-    public function execute($requestUri = '')
+    public function execute(Environment $twig, PDO $pdo, $requestUri = '')
     {
-        // On sépare "HomeController@index" -> ["HomeController", "index"]
-        list($controller, $method) = explode('@', $this->action);
+        try {
+            list($controller, $method) = explode('@', $this->action);
 
-        // Construct le FQCN (namespace + nom du controller)
-        $controllerFQCN = "App\\Controllers\\$controller";
+            $controllerFQCN = "App\\Controllers\\$controller";
 
-        // Vérifie que la classe existe
-        if (class_exists($controllerFQCN)) {
-            $controllerObject = new $controllerFQCN();
-            // Vérifie que la méthode existe dans ce controller
-            if (method_exists($controllerObject, $method)) {
-                // Exécution
-                return $controllerObject->$method();
+            if (class_exists($controllerFQCN)) {
+                $controllerObject = new $controllerFQCN($twig, $pdo);
+                if (method_exists($controllerObject, $method)) {
+                    return $controllerObject->$method();
+                } else {
+                    throw new \Exception("Méthode '$method' non trouvée dans le contrôleur '$controllerFQCN'.");
+                }
+            } else {
+                throw new \Exception("Contrôleur '$controllerFQCN' non trouvé.");
+            }
+        } catch (\Exception $e) {
+            error_log($e->getMessage());
+
+            try {
+                http_response_code(500);
+                echo $twig->render('Errors/500.html.twig', ['message' => $e->getMessage()]);
+            } catch (LoaderError | RuntimeError | SyntaxError $twigError) {
+                echo "500 Internal Server Error";
             }
         }
-
-        // Si le contrôleur ou la méthode est introuvable -> 500
-        http_response_code(500);
-        echo "500 Internal Server Error";
     }
 
     /**

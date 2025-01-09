@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erreur de Base de Données</title>
+    <link rel="stylesheet" href="{{ path('css') }}/styles.css"> {# Assurez-vous que le chemin vers votre CSS est correct #}
+</head>
+<body>
+    <div class="error-container">
+        <h1>Erreur de Base de Données</h1>
+        <p>Une erreur est survenue lors de la connexion à la base de données. Veuillez réessayer plus tard.</p>
+        {% if message %}
+            <div class="error-details">
+                <strong>Détails de l'erreur :</strong>
+                <p>{{ message }}</p>
+            </div>
+        {% endif %}
+        <a href="{{ path('home') }}" class="back-home-btn">Retour à l'accueil</a>
+    </div>
+</body>
+</html>

@@ -5,11 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
 
+    <!-- CSS Globaux -->
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/auth.css">
+    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/404.css">
+    <link rel="stylesheet" href="/css/slots.css">
+    <link rel="stylesheet" href="/css/ultra_gains.css">
+    <link rel="stylesheet" href="/css/carousel.css">  
+    <link rel="stylesheet" href="/css/about.css">
+    <link rel="stylesheet" href="/css/game.css">
+    <link rel="stylesheet" href="/css/promotions.css">
+    <link rel="stylesheet" href="/css/contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+    
+    <script src="/js/carousel.js" defer></script>
+    <script src="/js/promotions.js"></script>
     {% block head %}{% endblock %}
+    {% block stylesheets %}{% endblock %}
 </head>
 <body>
     {% if includeNavbarAndFooter %}
@@ -23,5 +37,8 @@
     {% if includeNavbarAndFooter %}
         {% include 'Components/Footer/footer.html.twig' %}
     {% endif %}
+    
+    <!-- Scripts Globaux -->
+    {% block scripts %}{% endblock %}
 </body>
 </html>

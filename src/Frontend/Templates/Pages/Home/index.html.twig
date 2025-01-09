@@ -1,19 +1,36 @@
 {# src/Frontend/Templates/Pages/Home/index.html.twig #}
 {% extends 'layouts/layout.html.twig' %}
 
-{% block head %}
-    {# Ici tu peux charger du CSS/JS spécifique à la page d'accueil #}
-    {# <link rel="stylesheet" href="/css/home.css"> #}
+{% block content %}
+<div class="carousel-container">
+    <div class="carousel">
+        <button class="carousel-arrow prev">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="carousel-slides">
+            {% for slide in slides %}
+            <div class="carousel-slide{% if loop.first %} active{% endif %}">
+                <img src="{{ slide.image }}" alt="Slide {{ loop.index }}">
+                <div class="carousel-overlay">
+                    <div class="carousel-logo">
+                        <i class="{{ slide.icon }}"></i>
+                    </div>
+                    <div class="carousel-description">
+                        <h2>{{ slide.title }}</h2>
+                        <p>{{ slide.description }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <button class="carousel-arrow next">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+</div>
 {% endblock %}
 
-{% block content %}
-    <h1>Bienvenue sur Spin&Win</h1>
-    <p>Ici, vous découvrirez nos jeux, promotions et bien plus encore.</p>
-
-    {# Lien vers d'autres sections si nécessaire #}
-    <ul>
-        <li><a href="/games">Voir les jeux</a></li>
-        <li><a href="/promotions">Découvrir les promotions</a></li>
-        <li><a href="/contact">Nous contacter</a></li>
-    </ul>
+{% block scripts %}
+    <!-- Inclure le script spécifique à la machine à sous -->
+    <script src="/js/carousel.js"></script>
 {% endblock %}

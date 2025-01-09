@@ -1,30 +1,23 @@
-version: '3.8'
+# docker-compose.yml
+version: '3.9'
 
 services:
   web:
     build: .
+    container_name: my_php_app
+    restart: unless-stopped
     ports:
-      - "8000:80"
+      - "${APP_PORT}:${WEB_PORT}"
     volumes:
       - ./public:/var/www/html/public
       - ./src:/var/www/html/src
       - ./app:/var/www/html/app
       - ./config:/var/www/html/config
-      # Ne mappe pas le répertoire vendor depuis l'hôte
+      # Ne mappe pas le répertoire vendor depuis l'hôte pour des raisons de sécurité
       # - ./vendor:/var/www/html/vendor
-    depends_on:
-      - db
+    networks:
+      - app_network
 
-  db:
-    image: mysql:5.7
-    restart: always
-    environment:
-      MYSQL_DATABASE: casino_db
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
-      MYSQL_ROOT_PASSWORD: rootpassword
-    volumes:
-      - db_data:/var/lib/mysql
-
-volumes:
-  db_data:
+networks:
+  app_network:
+    external: true

@@ -1,20 +1,28 @@
-{# src/Frontend/Templates/Pages/Games/index.html.twig #}
 {% extends 'layouts/layout.html.twig' %}
 
-{% block head %}
-    {# CSS/JS spécifiques pour la liste des jeux #}
-{% endblock %}
+{% block title %}Jeux{% endblock %}
 
 {% block content %}
-    <h1>Nos Jeux</h1>
-    <p>Découvrez notre sélection de jeux de casino :</p>
-    <ul>
-        <li><a href="/games/blackjack">Blackjack</a></li>
-        <li><a href="/games/roulette">Roulette</a></li>
-        <li><a href="/games/poker">Poker</a></li>
-        <li><a href="/games/slots">Machines à Sous</a></li>
-    </ul>
+<div class="games-container">
+    <h1> $ SLOT MACHINE $ </h1>
+    <div class="games-list">
+        <div class="game-item">
+            <a href="{{ path('games_slots') }}">
+                <img src="/images/slots_thumbnail.png" alt="Machine à Sous">
+                <h2>Machine à Sous</h2>
+            </a>
+        </div>
+        <div class="game-item">
+            <a href="/games/ultra-gains">
+                <img src="/images/slots_thumbnail.png" alt="Ultra Gains">
+                <h2>Ultra Gains</h2>
+            </a>
+        </div>
+        <!-- Ajoutez d'autres jeux ici -->
+    </div>
+</div>
+{% endblock %}
 
-    {# Exemple d’appel d’un partial si besoin #}
-    {# {% include 'partials/games-intro.html.twig' %} #}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/games.css">
 {% endblock %}

@@ -1,0 +1,62 @@
+/* Styles pour la page 404 */
+.error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 20px;
+}
+
+.error-box {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 40px 30px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+.error-icon {
+    font-size: 60px;
+    color: #dc3545;
+    margin-bottom: 20px;
+}
+
+.error-box h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: #343a40;
+}
+
+.error-box h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #6c757d;
+}
+
+.error-box p {
+    font-size: 16px;
+    color: #6c757d;
+    margin-bottom: 30px;
+}
+
+.back-home-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #17a2b8;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+    gap: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.back-home-btn:hover {
+    background: #138496;
+    transform: translateY(-2px);
+}

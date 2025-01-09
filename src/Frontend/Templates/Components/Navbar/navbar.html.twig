@@ -1,37 +1,37 @@
 <nav class="navbar">
     <div class="navbar-left">
-        <a href="/" class="navbar-logo">
+        <a href="{{ path('home') }}" class="navbar-logo">
             <i class="fas fa-coins"></i> Spin&Win
         </a>
     </div>
     <div class="navbar-center">
         <ul>
             {# Page d'accueil #}
-            <li><a href="/"><i class="fas fa-home"></i> Accueil</a></li>
+            <li><a href="{{ path('home') }}"><i class="fas fa-home"></i> Accueil</a></li>
 
             {# Jeux (ex. Blackjack, Roulette, etc.) #}
-            <li><a href="/games"><i class="fas fa-dice"></i> Jeux</a></li>
+            <li><a href="{{ path('games') }}"><i class="fas fa-dice"></i> Jeux</a></li>
 
             {# Page À propos #}
-            <li><a href="/about"><i class="fas fa-info-circle"></i> À propos</a></li>
+            <li><a href="{{ path('about') }}"><i class="fas fa-info-circle"></i> À propos</a></li>
 
             {# Promotions #}
-            <li><a href="/promotions"><i class="fas fa-gifts"></i> Promotions</a></li>
+            <li><a href="{{ path('promotions') }}"><i class="fas fa-gifts"></i> Promotions</a></li>
 
             {# Contact #}
-            <li><a href="/contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><a href="{{ path('contact') }}"><i class="fas fa-envelope"></i> Contact</a></li>
         </ul>
     </div>
     <div class="navbar-right">
         <ul>
-            {% if app_user %}
+            {% if session.user_id %}
                 {# Profil et Déconnexion si l'utilisateur est connecté #}
-                <li><a href="/profile"><i class="fas fa-user"></i> Profil</a></li>
-                <li><a href="/logout"><i class="fas fa-sign-out-alt"></i> Déconnexion</a></li>
+                <li><a href="{{ path('profile') }}"><i class="fas fa-user"></i> Profil</a></li>
+                <li><a href="{{ path('logout') }}"><i class="fas fa-sign-out-alt"></i> Déconnexion</a></li>
             {% else %}
                 {# Inscription et Connexion si l'utilisateur n'est pas connecté #}
-                <li><a href="/register"><i class="fas fa-user-plus"></i> Inscription</a></li>
-                <li><a href="/login"><i class="fas fa-sign-in-alt"></i> Connexion</a></li>
+                <li><a href="{{ path('register') }}"><i class="fas fa-user-plus"></i> Inscription</a></li>
+                <li><a href="{{ path('login') }}"><i class="fas fa-sign-in-alt"></i> Connexion</a></li>
             {% endif %}
         </ul>
     </div>

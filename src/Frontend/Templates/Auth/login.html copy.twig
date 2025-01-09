@@ -1,0 +1,44 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+<div class="register-container">
+    <a href="{{ path('home') }}" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+
+    <div class="register-box">
+        <i class="fas fa-user-circle logo"></i>
+        <h1>Connexion</h1>
+        
+        {% if error %}
+            <div class="error-message">
+                <i class="fas fa-exclamation-triangle"></i> {{ error }}
+            </div>
+        {% endif %}
+        
+        {% if success %}
+            <div class="success-message">
+                <i class="fas fa-check-circle"></i> {{ success }}
+            </div>
+        {% endif %}
+
+        <form action="{{ path('login') }}" method="post">
+            <div class="form-group">
+                <label for="email">Adresse E-mail</label>
+                <input type="email" id="email" name="email" placeholder="votreemail@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" placeholder="Mot de passe" required>
+            </div>
+
+            <button type="submit">Se connecter</button>
+        </form>
+
+        <div class="info-text">
+            <a href="{{ path('register') }}">Pas de compte ? Inscrivez-vous</a> | 
+            <a href="{{ path('forgot_password') }}">Mot de passe oublié</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

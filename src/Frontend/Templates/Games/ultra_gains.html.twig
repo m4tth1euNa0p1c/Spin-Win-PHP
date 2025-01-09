@@ -1,0 +1,144 @@
+{% extends 'layouts/layout.html.twig' %}
+
+{% block title %}Ultra Gains{% endblock %}
+
+{% block head %}
+    <!-- Inclure le jeton CSRF -->
+    <meta name="csrf-token" content="{{ csrf_token }}">
+{% endblock %}
+
+{% block content %}
+<div class="ultra-gains-container">
+    <h1>Ultra Gains 3 x 3 x 3 <strong>Prix = 500 coins</strong></h1>
+    <div class="ultra-gains-machine">
+        <div class="reels">
+            <div class="reel" id="reel1">
+                <div class="reel-container">
+                    <img src="/images/empty.png" alt="empty">
+                </div>
+            </div>
+            <div class="reel" id="reel2">
+                <div class="reel-container">
+                    <img src="/images/empty.png" alt="empty">
+                </div>
+            </div>
+            <div class="reel" id="reel3">
+                <div class="reel-container">
+                    <img src="/images/empty.png" alt="empty">
+                </div>
+            </div>
+            <div class="reel" id="reel4">
+                <div class="reel-container">
+                    <img src="/images/empty.png" alt="empty">
+                </div>
+            </div>
+            <div class="reel" id="reel5">
+                <div class="reel-container">
+                    <img src="/images/empty.png" alt="empty">
+                </div>
+            </div>
+            <div class="reel" id="reel6">
+                <div class="reel-container">
+                    <img src="/images/empty.png" alt="empty">
+                </div>
+            </div>
+            <div class="reel" id="reel7">
+                <div class="reel-container">
+                    <img src="/images/empty.png" alt="empty">
+                </div>
+            </div>
+            <div class="reel" id="reel8">
+                <div class="reel-container">
+                    <img src="/images/empty.png" alt="empty">
+                </div>
+            </div>
+            <div class="reel" id="reel9">
+                <div class="reel-container">
+                    <img src="/images/empty.png" alt="empty">
+                </div>
+            </div>
+        </div>
+        <div class="ultra-gains-info">
+            <p><i class="fas fa-coins"></i> Crédits : <span id="current-coins">{{ coins }}</span> EFREICOIN</p>
+        </div>
+        <button id="spin-button"><i class="fas fa-play"></i> Lancer</button>
+        <!-- Ajout du message de résultat -->
+        <div id="result-message"></div>
+    </div>
+
+    <!-- Section des Consignes -->
+    <div class="instructions">
+        <h2><i class="fas fa-info-circle"></i> Comment Jouer</h2>
+        <div class="instruction-steps">
+            <div class="step">
+                <i class="fas fa-hand-pointer fa-2x"></i>
+                <p>Cliquez sur <strong>Lancer</strong> pour faire tourner les rouleaux.<strong>1000 coins</strong></p>
+            </div>
+            <div class="step">
+                <i class="fas fa-sync fa-2x"></i>
+                <p>Les rouleaux s'arrêtent aléatoirement pour afficher des symboles.</p>
+            </div>
+            <div class="step">
+                <i class="fas fa-coins fa-2x"></i>
+                <p>Des combinaisons de symboles gagnantes vous rapportent des EFREICOINS.</p>
+            </div>
+            <div class="step">
+                <i class="fas fa-trophy fa-2x"></i>
+                <p>Atteignez le jackpot pour des gains exceptionnels !</p>
+            </div>
+        </div>
+        <h3><i class="fas fa-chart-line"></i> Gains Potentiels</h3>
+        <div class="potential-gains">
+            <div class="gain-item">
+                <img src="/images/diamond.png" alt="Diamond">
+                <p><strong>3 Diamonds :</strong> 100 EFREICOINS</p>
+            </div>
+            <div class="gain-item">
+                <img src="/images/gold.png" alt="Gold">
+                <p><strong>3 Golds :</strong> 50 EFREICOINS</p>
+            </div>
+            <div class="gain-item">
+                <img src="/images/silver.png" alt="Silver">
+                <p><strong>3 Silvers :</strong> 50 EFREICOINS</p>
+            </div>
+            <div class="gain-item">
+                <img src="/images/ruby.png" alt="Ruby">
+                <p><strong>3 Rubies :</strong> 30 EFREICOINS</p>
+            </div>
+            <div class="gain-item">
+                <img src="/images/emerald.png" alt="Emerald">
+                <p><strong>3 Emeralds :</strong> 30 EFREICOINS</p>
+            </div>
+            <div class="gain-item">
+                <img src="/images/sapphire.png" alt="Sapphire">
+                <p><strong>3 Sapphires :</strong> 30 EFREICOINS</p>
+            </div>
+            <div class="gain-item">
+                <img src="/images/pearl.png" alt="Pearl">
+                <p><strong>3 Pearls :</strong> 20 EFREICOINS</p>
+            </div>
+            <div class="gain-item">
+                <img src="/images/topaz.png" alt="Topaz">
+                <p><strong>3 Topazes :</strong> 20 EFREICOINS</p>
+            </div>
+            <div class="gain-item">
+                <img src="/images/amethyst.png" alt="Amethyst">
+                <p><strong>3 Amethysts :</strong> 20 EFREICOINS</p>
+            </div>
+            <div class="gain-item jackpot">
+                <img src="/images/jackpot.png" alt="Jackpot">
+                <p><strong>Jackpot :</strong> 500 EFREICOINS</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/ultra_gains.css">
+{% endblock %}
+
+{% block scripts %}
+    <!-- Inclure le script spécifique à Ultra Gains -->
+    <script src="/js/ultra_gains.js"></script>
+{% endblock %}

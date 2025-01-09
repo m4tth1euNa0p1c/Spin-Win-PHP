@@ -1,11 +1,55 @@
 {# src/Frontend/Templates/Pages/About/index.html.twig #}
 {% extends 'layouts/layout.html.twig' %}
 
-{% block head %}
-    {# CSS/JS pour la page À propos #}
-{% endblock %}
-
 {% block content %}
-    <h1>À propos</h1>
-    <p>Découvrez l’histoire de Spin&Win et notre engagement envers nos joueurs.</p>
+<div class="about-container">
+    <div class="about-header">
+        <h1><i class="fas fa-hands-helping"></i> Notre Application Web</h1>
+        <p><i class="fas fa-user"></i>Réalisée par Matthieu BARRAQUE</p>
+    </div>
+    <div class="about-content">
+        <h2><i class="fas fa-info-circle"></i> À propos du projet</h2>
+        <p>
+            Cette application web réunit plusieurs fonctionnalités complètes. 
+            Elle inclut des systèmes d’authentification et de gestion des utilisateurs, 
+            une <strong>slot machine</strong> interactive, des <strong>promotions</strong> 
+            dynamiques, ainsi que diverses pages de démonstration (comme la page Contact ou 
+            un livre d’or interactif).
+        </p>
+
+        <h3><i class="fas fa-lightbulb"></i> Objectifs principaux :</h3>
+        <ul>
+            <li><i class="fas fa-check"></i> Créer une expérience utilisateur cohérente (front + back) autour du jeu de type casino.</li>
+            <li><i class="fas fa-check"></i> Gérer l’inscription, la connexion et la sécurité des comptes.</li>
+            <li><i class="fas fa-check"></i> Implémenter un système de pièces virtuelles (coins) pour la Slot Machine, avec mises et gains. </li>
+            <li><i class="fas fa-check"></i> Proposer un design réactif et accessible, adapté aux ordinateurs et mobiles.</li>
+        </ul>
+
+        <h3><i class="fas fa-cogs"></i> Fonctionnalités clés :</h3>
+        <ul>
+            <li><i class="fas fa-user-plus"></i> <strong>Inscription & connexion :</strong> gestion sécurisée des utilisateurs avec rôles et sessions.</li>
+            <li><i class="fas fa-dice"></i> <strong>Slot Machine :</strong> Jeu de machine à sous entièrement fonctionnel, avec animations et système de gains.</li>
+            <li><i class="fas fa-tags"></i> <strong>Promotions :</strong> Affichage d’offres promotionnelles dynamiques, bonus de bienvenue et autres avantages.</li>
+            <li><i class="fas fa-comments"></i> <strong>Contact & Livre d’or :</strong> Formulaire de contact et possibilité de laisser des retours ou commentaires.</li>
+            <li><i class="fas fa-coins"></i> <strong>Gestion de coins :</strong> Initialisation de crédit, perte et gain sur chaque spin, transactions enregistrées.</li>
+        </ul>
+
+        <h3><i class="fas fa-tools"></i> Technologies & méthodes utilisées :</h3>
+        <ul>
+            <li><i class="fas fa-database"></i> Base de données MySQL (via PDO) pour stocker utilisateurs, messages et transactions.</li>
+            <li><i class="fas fa-code"></i> Système MVC modulaire (PHP), routes personnalisées, intégration Twig pour le rendu de pages.</li>
+            <li><i class="fas fa-lock"></i> Sécurité des sessions et token CSRF pour éviter les attaques de type XSS/CSRF.</li>
+            <li><i class="fas fa-mobile-alt"></i> Design réactif (responsive) avec une attention portée à l’UX sur mobile.</li>
+            <li><i class="fas fa-docker"></i> Optionnel : Docker pour simplifier le déploiement et la configuration de l’environnement.</li>
+        </ul>
+
+        <h3><i class="fas fa-plus-circle"></i> Évolutions possibles :</h3>
+        <ul>
+            <li><i class="fas fa-user-shield"></i> Administration poussée (gestion des utilisateurs, ban, modération). </li>
+            <li><i class="fas fa-unlock-alt"></i> Mot de passe oublié ou double authentification avancée.</li>
+            <li><i class="fas fa-money-bill-wave"></i> Système de paiement ou recharge de crédits en argent réel.</li>
+            <li><i class="fas fa-gamepad"></i> Ajout d’autres mini-jeux : roulette, blackjack, etc.</li>
+        </ul>
+    </div>
+</div>
 {% endblock %}

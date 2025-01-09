@@ -1,0 +1,220 @@
+/* profile.css */
+
+body {
+    background: linear-gradient(to bottom, #f7f7f7, #e9ecef);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.temp-message {
+    background-color: #f1c40f;
+    color: #2c3e50;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.temp-message i {
+    font-size: 22px;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.error-message i {
+    font-size: 22px;
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 20px;
+}
+
+.profile-box {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+.profile-header {
+    margin-bottom: 30px;
+}
+
+.profile-picture i {
+    font-size: 100px;
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+.profile-box h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #343a40;
+}
+
+.profile-box p {
+    font-size: 16px;
+    color: #6c757d;
+    margin: 0;
+}
+
+.profile-info {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.profile-info h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #495057;
+    border-bottom: 2px solid #6c757d;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.profile-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-info ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #343a40;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.profile-actions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.logout-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    background: #dc3545;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    gap: 8px;
+}
+
+.logout-btn:hover {
+    background: #c82333;
+}
+
+.profile-update {
+    margin-top: 40px;
+    text-align: left;
+}
+
+.profile-update h2 {
+    font-size: 20px;
+    color: #495057;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-update .form-group {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-update label {
+    width: 150px;
+    font-weight: bold;
+    color: #343a40;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.profile-update input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-update input:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 5px rgba(128, 189, 255, 0.5);
+    outline: none;
+}
+
+.profile-update button {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.profile-update button:hover {
+    background-color: #218838;
+}
+
+@media (max-width: 600px) {
+    .profile-update .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-update label {
+        width: 100%;
+    }
+
+    .profile-update input {
+        width: 100%;
+    }
+}

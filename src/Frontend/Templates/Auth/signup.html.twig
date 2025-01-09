@@ -1,0 +1,48 @@
+{% extends 'layouts/layout.html.twig' %}
+
+{% block content %}
+<div class="register-container">
+    <a href="/" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+
+    <div class="register-box">
+        <i class="fas fa-user-circle logo"></i>
+        <h1>Créer un Compte</h1>
+
+        {% if error %}
+            <div style="color: red; margin-bottom: 20px;">{{ error }}</div>
+        {% endif %}
+        
+        <form action="/register" method="post">
+            <div class="form-group">
+                <label for="email">Adresse E-mail</label>
+                <input type="email" id="email" name="email" placeholder="votreemail@example.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="username">Nom d'utilisateur</label>
+                <input type="text" id="username" name="username" placeholder="Nom d'utilisateur" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" placeholder="Mot de passe" required>
+            </div>
+
+            <div class="form-group">
+                <label for="confirm_password">Confirmer le Mot de passe</label>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirmez le mot de passe" required>
+            </div>
+
+            <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+
+            <button type="submit">S'inscrire</button>
+        </form>
+
+        <div class="info-text">
+            En créant un compte, vous acceptez nos 
+            <a href="#">Conditions d'utilisation</a> et notre 
+            <a href="#">Politique de confidentialité</a>.
+        </div>
+    </div>
+</div>
+{% endblock %}

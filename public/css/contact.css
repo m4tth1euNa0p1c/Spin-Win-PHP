@@ -1,0 +1,157 @@
+/* contact.css */
+
+/* (Optionnel) Un style global de fond */
+.contact-page {
+    /* Si vous avez une image de fond, vous pouvez l’ajouter ici 
+       background: url("/images/contact-bg.jpg") no-repeat center center fixed;
+       background-size: cover;
+    */
+    min-height: 100vh;
+    padding: 40px 20px;
+    /* Couleur de fond si vous n’utilisez pas d’image */
+    background-color: #f4f4f9;
+}
+
+/* En-tête de la page de contact */
+.contact-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-header h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contact-header .subtitle {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Conteneur principal de la page de contact */
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    /* Un peu de style */
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px 20px;
+}
+
+/* Informations de contact (partie gauche, par exemple) */
+.contact-info {
+    flex: 1 1 300px;
+    min-width: 280px;
+    border-right: 1px solid #ddd;
+    padding: 0 20px;
+}
+
+.contact-info h2 {
+    font-size: 24px;
+    color: #ff5722;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-info i {
+    color: #ff5722;
+    font-size: 18px;
+}
+
+/* Formulaire de contact (partie droite) */
+.contact-form {
+    flex: 2 1 400px;
+    min-width: 300px;
+    padding: 0 20px;
+}
+
+.contact-form h2 {
+    font-size: 24px;
+    color: #ff5722;
+    margin-bottom: 20px;
+}
+
+/* Style des champs du formulaire */
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group label span {
+    color: #ff5722; /* Indication visuelle du champ requis */
+}
+
+.form-group input[type="email"],
+.form-group textarea {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 10px;
+    transition: border-color 0.3s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ff5722;
+    box-shadow: 0 0 5px rgba(255, 87, 34, 0.3);
+}
+
+/* Bouton d’envoi du formulaire */
+.contact-submit {
+    background-color: #ff5722;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-submit i {
+    font-size: 16px;
+}
+
+.contact-submit:hover {
+    background-color: #e64a19;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .contact-info {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 20px;
+    }
+}
